@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outer Page</title>
+    <style>
+        /* Optional: Styling the iframe for better visibility */
+        iframe {
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+        }
+    </style>
 </head>
 <body>
-    <div id="content"></div>
-    <script>
-        fetch('Frontend/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('content').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading inner.html:', error));
-    </script>
+    <h1>Welcome to the Outer Page</h1>
+    <p>The content of <code>index.html</code> is embedded below:</p>
+
+    <!-- Embedding inner.html -->
+    <iframe src="Frontend/index.html" title="Inner Content"></iframe>
+
+    <p>This is some additional content on the outer page.</p>
 </body>
 </html>
